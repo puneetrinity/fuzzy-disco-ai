@@ -10,16 +10,15 @@
   },
   "scripts": {
     "start": "node mcp-server.js",
-    "dev": "concurrently \"tsc -w\" \"nodemon dist/index.js\"",
-    "build": "npm run clean && tsc",
+    "dev": "concurrently \"npx tsc -w\" \"nodemon dist/index.js\"",
+    "build": "npm run clean && npx tsc",
     "build:production": "npm run build && npm prune --production",
-    "clean": "rimraf dist",
+    "clean": "npx rimraf dist",
     "test": "node test-mcp-server.js",
     "test:integration": "npm run build && node test-mcp-full.js",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
-    "typecheck": "tsc --noEmit",
-    "postinstall": "npm run build",
+    "typecheck": "npx tsc --noEmit",
     "railway:deploy": "npm run build:production"
   },
   "keywords": [
@@ -41,7 +40,9 @@
     "express": "^4.18.2",
     "cors": "^2.8.5",
     "helmet": "^7.0.0",
-    "compression": "^1.7.4"
+    "compression": "^1.7.4",
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "typescript": "^5.2.2",

@@ -111,7 +111,7 @@ class SimpleMCPServer {
   }
 
   // Handle incoming MCP messages
-  handleMessage(message) {
+  async handleMessage(message) {
     const { id, method, params } = message;
 
     switch (method) {
@@ -120,7 +120,7 @@ class SimpleMCPServer {
       case "tools/list":
         return this.handleListTools(id);
       case "tools/call":
-        return this.handleCallTool(id, params);
+        return await this.handleCallTool(id, params);
       default:
         return this.errorResponse(id, -32601, "Method not found");
     }
@@ -907,14 +907,14 @@ class StdioHandler {
     });
   }
 
-  handleInput(data) {
+  async handleInput(data) {
     const lines = data.trim().split('\n');
     
     for (const line of lines) {
       if (line.trim()) {
         try {
           const message = JSON.parse(line);
-          const response = this.server.handleMessage(message);
+          const response = await this.server.handleMessage(message);
           console.log(JSON.stringify(response));
         } catch (error) {
           console.log(JSON.stringify({
@@ -922,7 +922,7 @@ class StdioHandler {
             id: null,
             error: {
               code: -32700,
-              message: "Parse error"
+              message: "Parse error: " + error.message
             }
           }));
         }

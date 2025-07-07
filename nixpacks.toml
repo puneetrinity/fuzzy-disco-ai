@@ -8,9 +8,9 @@ cmds = [
 
 [phases.build]
 cmds = [
-  'npx tsc --version',
-  'npm run clean',
-  'npx tsc'
+  './node_modules/.bin/tsc --version',
+  'rm -rf dist',
+  './node_modules/.bin/tsc'
 ]
 
 [start]

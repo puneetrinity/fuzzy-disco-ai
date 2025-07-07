@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "AI-powered development tools and MCP server for Railway deployment",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "mcp-server.js",
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=8.0.0"
   },
   "scripts": {
-    "start": "node mcp-server.js",
+    "start": "node simple-server.js",
     "dev": "concurrently \"npx tsc -w\" \"nodemon dist/index.js\"",
     "build": "rm -rf dist && npx tsc",
     "build:production": "npm run build",
@@ -19,7 +19,8 @@
     "lint": "echo 'Linting skipped - TypeScript compilation handles type checking'",
     "lint:fix": "echo 'Lint fix skipped - TypeScript compilation handles type checking'",
     "typecheck": "npx tsc --noEmit",
-    "railway:deploy": "npm run build:production"
+    "railway:deploy": "npm run build:production",
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [
     "ai",

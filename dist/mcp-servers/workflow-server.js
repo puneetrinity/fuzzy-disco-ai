@@ -23,7 +23,10 @@ export class WorkflowMCPServer {
         this.server = new Server({
             name: "ai-workflow-server",
             version: "1.0.0",
-            description: "AI-Enhanced Engineering Workflow Server",
+        }, {
+            capabilities: {
+                tools: {}
+            }
         });
         this.styleSelector = new PractitionerStyleSelector();
         this.workflowEngine = new WorkflowEngine();

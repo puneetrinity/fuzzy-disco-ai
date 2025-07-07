@@ -11,9 +11,9 @@
   "scripts": {
     "start": "node mcp-server.js",
     "dev": "concurrently \"npx tsc -w\" \"nodemon dist/index.js\"",
-    "build": "npm run clean && npx tsc",
+    "build": "npx tsc",
     "build:production": "npm run build",
-    "clean": "npx rimraf dist",
+    "clean": "rm -rf dist",
     "test": "node test-mcp-server.js",
     "test:integration": "npm run build && node test-mcp-full.js",
     "lint": "echo 'Linting skipped - TypeScript compilation handles type checking'",
@@ -52,8 +52,7 @@
     "@types/cors": "^2.8.15",
     "@types/compression": "^1.7.5",
     "nodemon": "^3.0.1",
-    "concurrently": "^8.2.2",
-    "rimraf": "^5.0.5"
+    "concurrently": "^8.2.2"
   },
   "files": [
     "dist/**/*",

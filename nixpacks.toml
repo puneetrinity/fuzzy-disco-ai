@@ -3,12 +3,15 @@ nixPkgs = ['nodejs-18_x', 'npm-8_x']
 
 [phases.install]
 cmds = [
-  'npm install --no-package-lock',
-  'npm run build'
+  'npm install --no-package-lock'
 ]
 
 [phases.build]
-cmds = ['echo "Build completed in install phase"']
+cmds = [
+  'npx tsc --version',
+  'npm run clean',
+  'npx tsc'
+]
 
 [start]
 cmd = 'npm start'

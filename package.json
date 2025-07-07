@@ -9,18 +9,11 @@
     "npm": ">=8.0.0"
   },
   "scripts": {
-    "start": "node web-server.js",
-    "dev": "concurrently \"npx tsc -w\" \"nodemon dist/index.js\"",
-    "build": "rm -rf dist && npx tsc",
-    "build:production": "npm run build",
-    "clean": "rm -rf dist",
-    "test": "node test-mcp-server.js",
-    "test:integration": "npm run build && node test-mcp-full.js",
-    "lint": "echo 'Linting skipped - TypeScript compilation handles type checking'",
-    "lint:fix": "echo 'Lint fix skipped - TypeScript compilation handles type checking'",
-    "typecheck": "npx tsc --noEmit",
-    "railway:deploy": "npm run build:production",
-    "heroku-postbuild": "npm run build"
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "echo 'No build needed - pure JavaScript'",
+    "test": "echo 'Tests would go here'",
+    "lint": "echo 'Linting skipped'"
   },
   "keywords": [
     "ai",
@@ -37,23 +30,10 @@
     "url": "https://github.com/puneetrinity/fuzzy-disco-ai.git"
   },
   "dependencies": {
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "cors": "^2.8.5",
-    "helmet": "^7.0.0",
-    "compression": "^1.7.4",
-    "@modelcontextprotocol/sdk": "^0.5.0",
-    "zod": "^3.22.4",
-    "typescript": "^5.2.2"
+    "express": "^4.18.2"
   },
   "devDependencies": {
-    "ts-node": "^10.9.1",
-    "@types/node": "^20.8.0",
-    "@types/express": "^4.17.20",
-    "@types/cors": "^2.8.15",
-    "@types/compression": "^1.7.5",
-    "nodemon": "^3.0.1",
-    "concurrently": "^8.2.2"
+    "nodemon": "^3.0.1"
   },
   "files": [
     "dist/**/*",

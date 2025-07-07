@@ -29,11 +29,17 @@ export class WorkflowMCPServer {
   private teamCoordinator: TeamCoordinator;
 
   constructor() {
-    this.server = new Server({
-      name: "ai-workflow-server",
-      version: "1.0.0",
-      description: "AI-Enhanced Engineering Workflow Server",
-    });
+    this.server = new Server(
+      {
+        name: "ai-workflow-server",
+        version: "1.0.0",
+      },
+      {
+        capabilities: {
+          tools: {}
+        }
+      }
+    );
 
     this.styleSelector = new PractitionerStyleSelector();
     this.workflowEngine = new WorkflowEngine();

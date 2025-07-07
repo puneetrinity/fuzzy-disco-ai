@@ -11,8 +11,8 @@
   "scripts": {
     "start": "node simple-server.js",
     "dev": "concurrently \"npx tsc -w\" \"nodemon dist/index.js\"",
-    "build": "rm -rf dist && npx tsc",
-    "build:production": "npm run build",
+    "build": "echo 'Build skipped - using simple JavaScript server'",
+    "build:production": "echo 'Production build skipped - using simple JavaScript server'",
     "clean": "rm -rf dist",
     "test": "node test-mcp-server.js",
     "test:integration": "npm run build && node test-mcp-full.js",
@@ -20,7 +20,7 @@
     "lint:fix": "echo 'Lint fix skipped - TypeScript compilation handles type checking'",
     "typecheck": "npx tsc --noEmit",
     "railway:deploy": "npm run build:production",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "echo 'No build needed'"
   },
   "keywords": [
     "ai",

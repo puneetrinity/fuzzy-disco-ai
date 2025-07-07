@@ -11,7 +11,7 @@
   "scripts": {
     "start": "node mcp-server.js",
     "dev": "concurrently \"npx tsc -w\" \"nodemon dist/index.js\"",
-    "build": "npx tsc",
+    "build": "rm -rf dist && npx tsc",
     "build:production": "npm run build",
     "clean": "rm -rf dist",
     "test": "node test-mcp-server.js",

@@ -8,9 +8,8 @@ cmds = [
 
 [phases.build]
 cmds = [
-  './node_modules/.bin/tsc --version',
-  'rm -rf dist',
-  './node_modules/.bin/tsc'
+  'npm run typecheck',
+  'npm run build'
 ]
 
 [start]

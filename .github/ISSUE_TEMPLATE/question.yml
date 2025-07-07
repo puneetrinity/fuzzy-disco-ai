@@ -1,0 +1,95 @@
+name: 🤝 General Question
+description: Ask a question about the AI-Enhanced Workflow system
+title: "[Question]: "
+labels: ["question", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your question! Please fill out this form to help us provide the best answer.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: What would you like to know?
+      placeholder: Ask your question here...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Question Category
+      description: What category does your question fall into?
+      options:
+        - Getting Started
+        - Practitioner Styles
+        - Claude Code Integration
+        - MCP Server
+        - Development Workflow
+        - Testing
+        - Deployment
+        - Contributing
+        - Architecture
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: experience-level
+    attributes:
+      label: Experience Level
+      description: How familiar are you with the AI-Enhanced Workflow system?
+      options:
+        - New to the project
+        - Basic understanding
+        - Intermediate user
+        - Advanced user
+        - Expert/Contributor
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Provide any relevant context for your question
+      placeholder: |
+        - What are you trying to accomplish?
+        - What have you already tried?
+        - What specific part are you stuck on?
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment (if relevant)
+      description: Please provide your environment details if relevant to your question
+      placeholder: |
+        - OS: [e.g., Windows 11, macOS 14, Ubuntu 22.04]
+        - Node.js version: [e.g., 18.17.0]
+        - VS Code version: [e.g., 1.84.2]
+        - Claude Code version: [e.g., 0.1.0]
+
+  - type: checkboxes
+    id: practitioner-styles
+    attributes:
+      label: Related Practitioner Styles
+      description: Which practitioner styles are related to your question?
+      options:
+        - label: Uncle Bob (Clean Code)
+        - label: Kent Beck (TDD)
+        - label: Martin Fowler (Refactoring)
+        - label: Jessica Kerr (Functional)
+        - label: Kelsey Hightower (Cloud-Native)
+        - label: General workflow question
+        - label: Not sure
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Information
+      description: Add any other information that might be relevant
+      placeholder: Any additional context or details...

@@ -1,0 +1,125 @@
+name: ✨ Feature Request
+description: Suggest a new feature for the AI-Enhanced Workflow system
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature! Please fill out this form to help us understand your idea.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature Description
+      description: A clear and concise description of the feature you'd like to see.
+      placeholder: Describe the feature...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: practitioner-style
+    attributes:
+      label: Related Practitioner Style
+      description: Which practitioner style would this feature primarily support?
+      options:
+        - Uncle Bob (Clean Code)
+        - Kent Beck (TDD)
+        - Martin Fowler (Refactoring)
+        - Jessica Kerr (Functional)
+        - Kelsey Hightower (Cloud-Native)
+        - General System Enhancement
+        - New Practitioner Style
+        - Cross-Style Feature
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What problem does this feature solve?
+      placeholder: Describe the problem this feature addresses...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: How would you like this feature to work?
+      placeholder: Describe your proposed solution...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: What other approaches have you considered?
+      placeholder: Describe alternative solutions...
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - Low - Nice to have
+        - Medium - Would improve workflow
+        - High - Blocks current work
+        - Critical - Essential for adoption
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: Use Cases
+      description: Provide specific examples of how this feature would be used
+      placeholder: |
+        1. As a developer, I want to...
+        2. When working on refactoring, I need to...
+        3. During code reviews, it would help to...
+    validations:
+      required: true
+
+  - type: textarea
+    id: mockups
+    attributes:
+      label: Mockups or Examples
+      description: If applicable, provide mockups, code examples, or references
+      placeholder: Add any visual mockups or code examples here...
+
+  - type: checkboxes
+    id: ai-integration
+    attributes:
+      label: AI Integration
+      description: How should this feature integrate with AI assistance?
+      options:
+        - label: Should work with Claude Code
+        - label: Should be available through MCP server
+        - label: Should use intelligent style selection
+        - label: Should support team coordination
+        - label: Should include automated testing
+        - label: No AI integration needed
+
+  - type: checkboxes
+    id: implementation
+    attributes:
+      label: Implementation Considerations
+      description: What should be considered when implementing this feature?
+      options:
+        - label: Backward compatibility required
+        - label: Performance impact should be minimal
+        - label: Should be configurable/optional
+        - label: Requires documentation updates
+        - label: May affect existing workflows
+        - label: Should include comprehensive tests
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other context about the feature request
+      placeholder: Any additional information that might help...

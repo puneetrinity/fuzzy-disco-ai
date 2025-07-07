@@ -1,0 +1,103 @@
+name: 📚 Documentation Issue
+description: Report an issue with documentation or suggest improvements
+title: "[Docs]: "
+labels: ["documentation", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve our documentation! Please fill out this form to help us understand the issue.
+
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: Documentation Type
+      description: What type of documentation needs attention?
+      options:
+        - README.md
+        - API Documentation
+        - Getting Started Guide
+        - Practitioner Style Guides
+        - Code Examples
+        - Contributing Guidelines
+        - Developer Onboarding
+        - Claude Code Integration
+        - MCP Server Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Issue Description
+      description: What's wrong with the current documentation?
+      placeholder: Describe the documentation issue...
+    validations:
+      required: true
+
+  - type: textarea
+    id: location
+    attributes:
+      label: Document Location
+      description: Where is this documentation located?
+      placeholder: |
+        - File: [e.g., README.md, docs/api.md]
+        - Section: [e.g., "Getting Started", "API Reference"]
+        - Line numbers: [if applicable]
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      description: What type of documentation issue is this?
+      options:
+        - Missing Information
+        - Incorrect Information
+        - Outdated Information
+        - Confusing Explanation
+        - Broken Links
+        - Formatting Issues
+        - Spelling/Grammar
+        - New Documentation Needed
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-fix
+    attributes:
+      label: Suggested Fix
+      description: How would you fix or improve this documentation?
+      placeholder: Describe your suggested improvements...
+    validations:
+      required: true
+
+  - type: textarea
+    id: user-impact
+    attributes:
+      label: User Impact
+      description: How does this documentation issue affect users?
+      placeholder: Describe the impact on users...
+
+  - type: checkboxes
+    id: practitioner-styles
+    attributes:
+      label: Related Practitioner Styles
+      description: Which practitioner style documentation is affected?
+      options:
+        - label: Uncle Bob (Clean Code)
+        - label: Kent Beck (TDD)
+        - label: Martin Fowler (Refactoring)
+        - label: Jessica Kerr (Functional)
+        - label: Kelsey Hightower (Cloud-Native)
+        - label: General documentation
+        - label: Not applicable
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other context about the documentation issue
+      placeholder: Any additional information that might help...

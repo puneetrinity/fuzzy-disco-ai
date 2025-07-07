@@ -12,7 +12,7 @@
     "start": "node mcp-server.js",
     "dev": "concurrently \"npx tsc -w\" \"nodemon dist/index.js\"",
     "build": "npm run clean && npx tsc",
-    "build:production": "npm run build && npm prune --production",
+    "build:production": "npm run build",
     "clean": "npx rimraf dist",
     "test": "node test-mcp-server.js",
     "test:integration": "npm run build && node test-mcp-full.js",
@@ -61,14 +61,6 @@
     "README.md",
     "LICENSE"
   ],
-  "railway": {
-    "build": {
-      "command": "npm run build:production"
-    },
-    "start": {
-      "command": "npm start"
-    }
-  },
   "nodemonConfig": {
     "watch": ["dist"],
     "ext": "js",

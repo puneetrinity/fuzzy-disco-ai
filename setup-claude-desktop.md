@@ -1,43 +1,77 @@
-# Claude Desktop MCP Setup for WSL
+# 🌍 Global MCP Server Setup - Claude Desktop Integration
 
-## 🎯 Final Setup Steps
+## ✅ DEPLOYMENT COMPLETE!
 
-### 1. Copy Configuration to Claude Desktop
+Your AI tools are now **globally accessible** from anywhere you use Claude Desktop!
 
-For **Windows** (Claude Desktop runs on Windows, accessing WSL files):
+### 🌐 Global MCP Server
+- **URL**: https://fuzzy-disco-ai-production.up.railway.app/
+- **Status**: ✅ Deployed and running
+- **Access**: Global - works from any device with Claude Desktop
 
+### 🎯 Final Setup Steps (One-time only)
+
+#### 1. Install mcp-remote Bridge
 ```bash
-# From WSL, copy config to Windows Claude Desktop location
-mkdir -p /mnt/c/Users/$USER/AppData/Roaming/Claude/
-cp claude-desktop-config.json /mnt/c/Users/$USER/AppData/Roaming/Claude/claude_desktop_config.json
+npm install -g @modelcontextprotocol/mcp-remote
 ```
 
-### 2. Restart Claude Desktop
+#### 2. Configure Claude Desktop
 
-1. Close Claude Desktop completely
-2. Reopen Claude Desktop
-3. Look for the fuzzy-disco-ai tools in new conversations
+**Windows**: `%APPDATA%\Claude\claude_desktop_config.json`  
+**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`  
+**Linux**: `~/.config/Claude/claude_desktop_config.json`
 
-### 3. Verify Installation
+Add this configuration:
+```json
+{
+  "mcpServers": {
+    "fuzzy-disco-ai-global": {
+      "command": "npx",
+      "args": ["mcp-remote", "https://fuzzy-disco-ai-production.up.railway.app/message"],
+      "env": {}
+    }
+  }
+}
+```
 
-In Claude Desktop, you should see these tools available:
+#### 3. Restart Claude Desktop
+Close and reopen Claude Desktop completely.
 
-- 🎯 **select_practitioner_style**
-- 🛠️ **generate_code_with_style**  
-- 👥 **coordinate_team_workflow**
-- 🔍 **analyze_code_quality**
+### 🛠️ Available AI Tools
 
-### 4. Test the Tools
+After setup, you'll have these tools in **every Claude Desktop conversation**:
 
-Try this in Claude Desktop:
+- 🎯 **select_practitioner_style** - Auto-select coding approach
+- 🛠️ **generate_code_with_style** - Generate code following expert principles  
+- 👥 **coordinate_team_workflow** - Team coordination and planning
+- 🔍 **analyze_code_quality** - Multi-perspective code analysis
 
-**"Use the select_practitioner_style tool with taskType 'feature', context 'user authentication', and teamSize 3"**
+### 🧪 Test Your Setup
 
-## 🚀 Both Systems Ready!
+In any Claude Desktop conversation, try:
 
-✅ **Web API**: https://fuzzy-disco-ai-production.up.railway.app/  
-✅ **MCP Server**: Configured for Claude Desktop  
-✅ **VS Code Tasks**: Available in Command Palette  
-✅ **Claude Code**: CLAUDE.md file created  
+**"Use the select_practitioner_style tool with taskType 'feature', context 'user authentication system', and teamSize 3"**
 
-You now have the full AI-Enhanced Engineering Workflow system running in both modes!
+### 🌟 What You've Achieved
+
+✅ **Global Access**: Use AI tools from any device with Claude Desktop  
+✅ **No Local Setup**: No need to run servers on every machine  
+✅ **Always Updated**: Changes deploy automatically to all users  
+✅ **High Availability**: Runs on Railway cloud infrastructure  
+
+### 🔄 For WSL Users (Optional Local Development)
+
+If you want to run locally for development:
+
+```bash
+# Start local MCP server
+node mcp-server-standalone.js
+
+# Or start local web server  
+node server.js
+```
+
+## 🎉 You're All Set!
+
+Your AI-Enhanced Engineering Workflow tools are now globally available wherever you use Claude Desktop. No more local server management - just open Claude and start coding with AI assistance!

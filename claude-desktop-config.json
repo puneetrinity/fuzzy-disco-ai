@@ -1,8 +1,8 @@
 {
   "mcpServers": {
-    "fuzzy-disco-ai": {
-      "command": "node",
-      "args": ["/home/ews/fuzzy-disco-ai/mcp-server-standalone.js"],
+    "fuzzy-disco-ai-global": {
+      "command": "npx",
+      "args": ["mcp-remote", "https://fuzzy-disco-ai-production.up.railway.app/message"],
       "env": {}
     }
   }

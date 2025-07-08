@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "fuzzy-disco-ai": {
+      "command": "node",
+      "args": ["/home/ews/fuzzy-disco-ai/mcp-server-standalone.js"],
+      "env": {}
+    }
+  }
+}

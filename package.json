@@ -10,7 +10,9 @@
   },
   "scripts": {
     "start": "node server.js",
+    "start:mcp": "node mcp-server-global.js",
     "dev": "nodemon server.js",
+    "dev:mcp": "nodemon mcp-server-global.js",
     "build": "echo 'No build needed - pure JavaScript'",
     "test": "echo 'Tests would go here'",
     "lint": "echo 'Linting skipped'"
@@ -30,7 +32,8 @@
     "url": "https://github.com/puneetrinity/fuzzy-disco-ai.git"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "ws": "^8.14.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"

@@ -1,9 +1,11 @@
 {
   "mcpServers": {
     "fuzzy-disco-ai-global": {
-      "command": "npx",
-      "args": ["mcp-remote", "https://fuzzy-disco-ai-production.up.railway.app/message"],
-      "env": {}
+      "command": "node",
+      "args": ["/home/ews/fuzzy-disco-ai/mcp-global-bridge.js"],
+      "env": {
+        "API_URL": "https://fuzzy-disco-ai-production.up.railway.app"
+      }
     }
   }
 }

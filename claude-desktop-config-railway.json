@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "fuzzy-disco-ai-railway": {
+      "command": "node",
+      "args": ["/home/ews/fuzzy-disco-ai/mcp-railway-bridge.js"],
+      "env": {
+        "NODE_ENV": "production",
+        "RAILWAY_URL": "https://fuzzy-disco-ai-production.up.railway.app"
+      }
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "timestamp": "2025-07-08T19:13:46.684Z",
+  "summary": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0,
+    "successRate": 100
+  },
+  "tests": [
+    {
+      "test": "initialize",
+      "success": {
+        "name": "fuzzy-disco-ai-global",
+        "version": "1.0.0"
+      },
+      "response": {
+        "name": "fuzzy-disco-ai-global",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "test": "tools/list",
+      "success": true,
+      "toolCount": 4,
+      "tools": [
+        "select_practitioner_style",
+        "generate_code_with_style",
+        "coordinate_team_workflow",
+        "analyze_code_quality"
+      ]
+    },
+    {
+      "test": "select_practitioner_style",
+      "success": {
+        "type": "text",
+        "text": "{\n  \"task\": {\n    \"type\": \"feature\",\n    \"context\": \"user authentication system\",\n    \"teamSize\": 3\n  },\n  \"recommendation\": {\n    \"practitioner\": \"Martin Fowler\",\n    \"reasoning\": \"Enterprise patterns and refactoring expertise for feature development\",\n    \"principles\": [\n      \"Domain modeling\",\n      \"Enterprise patterns\",\n      \"Evolutionary architecture\"\n    ],\n    \"approach\": \"Start with domain modeling, use enterprise patterns, focus on maintainable architecture\"\n  },\n  \"teamGuidance\": \"Foster pair programming, conduct thorough code reviews, ensure knowledge sharing\"\n}"
+      },
+      "result": {
+        "task": {
+          "type": "feature",
+          "context": "user authentication system",
+          "teamSize": 3
+        },
+        "recommendation": {
+          "practitioner": "Martin Fowler",
+          "reasoning": "Enterprise patterns and refactoring expertise for feature development",
+          "principles": [
+            "Domain modeling",
+            "Enterprise patterns",
+            "Evolutionary architecture"
+          ],
+          "approach": "Start with domain modeling, use enterprise patterns, focus on maintainable architecture"
+        },
+        "teamGuidance": "Foster pair programming, conduct thorough code reviews, ensure knowledge sharing"
+      }
+    },
+    {
+      "test": "generate_code_with_style",
+      "success": {
+        "type": "text",
+        "text": "{\n  \"practitioner\": \"uncle-bob\",\n  \"codeType\": \"AuthService\",\n  \"requirements\": \"JWT token validation and user authentication\",\n  \"language\": \"typescript\",\n  \"generatedCode\": \"// Clean Code by Uncle Bob - AuthService\\nexport class AuthService {\\n  constructor(private readonly dependencies: Dependencies) {\\n    this.validateDependencies(dependencies);\\n  }\\n\\n  public execute(request: AuthServiceRequest): AuthServiceResponse {\\n    this.validateRequest(request);\\n    const result = this.processRequest(request);\\n    return this.formatResponse(result);\\n  }\\n\\n  private validateRequest(request: AuthServiceRequest): void {\\n    if (!request) {\\n      throw new Error('Request cannot be null');\\n    }\\n    // JWT token validation and user authentication - Add specific validation\\n  }\\n\\n  private processRequest(request: AuthServiceRequest): ProcessResult {\\n    // Core business logic: JWT token validation and user authentication\\n    return this.executeBusinessLogic(request);\\n  }\\n\\n  private executeBusinessLogic(request: AuthServiceRequest): ProcessResult {\\n    // Implementation of: JWT token validation and user authentication\\n    return { success: true, data: request };\\n  }\\n}\",\n  \"principles\": [\n    \"Single Responsibility\",\n    \"Open/Closed\",\n    \"Dependency Inversion\"\n  ],\n  \"usage\": \"This code follows uncle-bob's software engineering principles and best practices for JWT token validation and user authentication.\"\n}"
+      },
+      "hasGeneratedCode": true
+    },
+    {
+      "test": "coordinate_team_workflow",
+      "success": {
+        "type": "text",
+        "text": "{\n  \"workflow\": \"feature-development\",\n  \"priority\": \"high\",\n  \"team\": {\n    \"size\": 3,\n    \"members\": [\n      \"Alice\",\n      \"Bob\",\n      \"Charlie\"\n    ]\n  },\n  \"coordination\": {\n    \"phases\": [\n      \"Planning\",\n      \"Design\",\n      \"Implementation\",\n      \"Testing\",\n      \"Review\",\n      \"Deployment\"\n    ],\n    \"estimatedDuration\": \"1-2 weeks\",\n    \"tasks\": [\n      {\n        \"phase\": \"Planning\",\n        \"assignee\": \"Alice\",\n        \"duration\": \"1-2 days\",\n        \"description\": \"Requirements gathering, user story creation\"\n      },\n      {\n        \"phase\": \"Implementation\",\n        \"assignee\": \"Bob\",\n        \"duration\": \"5-8 days\",\n        \"description\": \"Core feature development\"\n      }\n    ]\n  },\n  \"recommendations\": [\n    \"Establish clear communication\",\n    \"Set up CI/CD\",\n    \"Define done criteria\"\n  ]\n}"
+      },
+      "result": {
+        "workflow": "feature-development",
+        "priority": "high",
+        "team": {
+          "size": 3,
+          "members": [
+            "Alice",
+            "Bob",
+            "Charlie"
+          ]
+        },
+        "coordination": {
+          "phases": [
+            "Planning",
+            "Design",
+            "Implementation",
+            "Testing",
+            "Review",
+            "Deployment"
+          ],
+          "estimatedDuration": "1-2 weeks",
+          "tasks": [
+            {
+              "phase": "Planning",
+              "assignee": "Alice",
+              "duration": "1-2 days",
+              "description": "Requirements gathering, user story creation"
+            },
+            {
+              "phase": "Implementation",
+              "assignee": "Bob",
+              "duration": "5-8 days",
+              "description": "Core feature development"
+            }
+          ]
+        },
+        "recommendations": [
+          "Establish clear communication",
+          "Set up CI/CD",
+          "Define done criteria"
+        ]
+      }
+    },
+    {
+      "test": "analyze_code_quality",
+      "success": {
+        "type": "text",
+        "text": "{\n  \"code\": \"function authenticate(user) { if (user.password === 'password123') return true; return false; }\",\n  \"language\": \"javascript\",\n  \"focusAreas\": [\n    \"security\",\n    \"clean-code\",\n    \"maintainability\"\n  ],\n  \"metrics\": {\n    \"lines\": 1,\n    \"functions\": 3,\n    \"classes\": 0,\n    \"complexity\": 2\n  },\n  \"overallScore\": 58,\n  \"practitionerPerspectives\": {\n    \"Uncle Bob\": {\n      \"score\": 10,\n      \"issues\": []\n    },\n    \"Martin Fowler\": {\n      \"score\": 9,\n      \"suggestions\": []\n    },\n    \"Kent Beck\": {\n      \"score\": 3,\n      \"testCoverage\": \"No tests detected\"\n    },\n    \"Jessica Kerr\": {\n      \"score\": 3,\n      \"observability\": \"Add logging\"\n    },\n    \"Kelsey Hightower\": {\n      \"score\": 4,\n      \"configuration\": \"Add environment config\"\n    }\n  },\n  \"recommendations\": []\n}"
+      },
+      "result": {
+        "code": "function authenticate(user) { if (user.password === 'password123') return true; return false; }",
+        "language": "javascript",
+        "focusAreas": [
+          "security",
+          "clean-code",
+          "maintainability"
+        ],
+        "metrics": {
+          "lines": 1,
+          "functions": 3,
+          "classes": 0,
+          "complexity": 2
+        },
+        "overallScore": 58,
+        "practitionerPerspectives": {
+          "Uncle Bob": {
+            "score": 10,
+            "issues": []
+          },
+          "Martin Fowler": {
+            "score": 9,
+            "suggestions": []
+          },
+          "Kent Beck": {
+            "score": 3,
+            "testCoverage": "No tests detected"
+          },
+          "Jessica Kerr": {
+            "score": 3,
+            "observability": "Add logging"
+          },
+          "Kelsey Hightower": {
+            "score": 4,
+            "configuration": "Add environment config"
+          }
+        },
+        "recommendations": []
+      }
+    }
+  ]
+}

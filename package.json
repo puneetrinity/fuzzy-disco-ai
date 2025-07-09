@@ -32,8 +32,12 @@
     "url": "https://github.com/puneetrinity/fuzzy-disco-ai.git"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.15.0",
     "express": "^4.18.2",
-    "ws": "^8.14.0"
+    "mcp-remote": "^0.1.18",
+    "node-fetch": "^3.3.2",
+    "ws": "^8.14.0",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
@@ -45,9 +49,13 @@
     "LICENSE"
   ],
   "nodemonConfig": {
-    "watch": ["dist"],
+    "watch": [
+      "dist"
+    ],
     "ext": "js",
-    "ignore": ["node_modules/**/*"],
+    "ignore": [
+      "node_modules/**/*"
+    ],
     "exec": "node dist/index.js"
   }
 }

@@ -1,0 +1,6 @@
+@echo off
+echo Testing Node.js availability...
+node --version
+echo Testing MCP bridge...
+echo {"jsonrpc": "2.0", "id": 1, "method": "tools/list", "params": {}} | node C:\Users\EverWanderingSoul\mcp-bridge-windows.js
+pause

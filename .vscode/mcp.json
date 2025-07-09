@@ -3,7 +3,7 @@
     "ai-workflow-server": {
       "command": "node",
       "args": ["mcp-server.js"],
-      "cwd": "c:\\Users\\EverWanderingSoul\\Desktop\\Workers of AI",
+      "cwd": "/home/ews/fuzzy-disco-ai",
       "env": {
         "NODE_ENV": "development"
       }

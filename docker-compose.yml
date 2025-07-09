@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  fuzzy-disco-ai:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - NODE_ENV=production
+      - PORT=8000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "import('node-fetch').then(({default: fetch}) => fetch('http://localhost:8000/health').then(r => r.ok ? process.exit(0) : process.exit(1)))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - fuzzy-disco-network
+
+  # MCP Server (standalone)
+  mcp-server:
+    build: .
+    command: ["node", "mcp-server-standalone.js"]
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    networks:
+      - fuzzy-disco-network
+
+  # Global MCP Server (for Railway-like functionality)
+  mcp-global:
+    build: .
+    command: ["node", "mcp-server-global.js"]
+    ports:
+      - "8001:8000"
+    environment:
+      - NODE_ENV=production
+      - PORT=8000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "import('node-fetch').then(({default: fetch}) => fetch('http://localhost:8000/health').then(r => r.ok ? process.exit(0) : process.exit(1)))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - fuzzy-disco-network
+
+networks:
+  fuzzy-disco-network:
+    driver: bridge
+
+volumes:
+  logs:
+    driver: local

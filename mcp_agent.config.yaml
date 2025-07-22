@@ -1,0 +1,31 @@
+# MCP Agent Configuration for Fuzzy Disco AI
+execution_engine: asyncio
+
+logger:
+  type: file
+  level: debug
+  
+mcp:
+  servers:
+    fuzzy_disco:
+      # Use our local Node.js MCP server
+      command: node
+      args:
+        - mcp-server-standalone.js
+      
+    # Optional: Add other servers
+    filesystem:
+      command: npx
+      args:
+        - "-y"
+        - "@modelcontextprotocol/server-filesystem"
+        - "."
+
+# Configure LLM providers (users should set API keys)
+anthropic:
+  # Set in secrets file or env var
+  default_model: claude-3-5-sonnet-20241022
+
+openai:
+  # Set in secrets file or env var  
+  default_model: gpt-4o-mini
